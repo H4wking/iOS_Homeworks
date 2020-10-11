@@ -88,7 +88,12 @@ class NoteDataManager {
         return false
     }
     
-    func searchByName(name: String) -> Int? {
+//    Comment: .contains(where:)
+//    func isInList(note: Note) -> Bool {
+//        notes.contains(where: { $0.noteId == note.noteId })
+//    }
+    
+    func searchByName(name: String) -> Int? { // Comment: .first(where:)
         for n in self.notes {
             if n.name == name {
                 return n.noteId
@@ -103,7 +108,7 @@ class NoteDataManager {
     }
     
     func sortNotes(f: (Note, Note) -> Bool) -> [Note] {
-        return self.notes.sorted(by: f)
+        return self.notes.sorted(by: f) // Comments: variables naming
     }
 }
 
