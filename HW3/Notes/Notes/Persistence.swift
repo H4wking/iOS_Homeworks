@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+protocol Persistence {
+    
+    func save(note: Note) throws
+    
+    func fetchNotes() throws -> [Note]
+}
